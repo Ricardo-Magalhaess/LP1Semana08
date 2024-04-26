@@ -98,7 +98,14 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </summary>
         private void InsertPlayer()
         {
-          
+            Console.WriteLine("Insert the name of the Player. ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Insert the score of the Player. ");
+            int score = int.Parse(Console.ReadLine());
+
+            Player player = new Player(name, score);
+            playerList.Add(player);
         }
 
         /// <summary>
@@ -112,9 +119,9 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </param>
         private static void ListPlayers(IEnumerable<Player> playersToList)
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+            foreach (Player player in playersToList){
+                Console.WriteLine($"Name={player.Name} Score={player.Score}");
+            }
         }
 
         /// <summary>
