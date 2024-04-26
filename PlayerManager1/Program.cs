@@ -129,9 +129,16 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </summary>
         private void ListPlayersWithScoreGreaterThan()
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+            Console.WriteLine("Insert the score to check if its greater than.");
+            int minScore = int.Parse(Console.ReadLine());
+
+            foreach(Player player in playerList)
+            {
+                if (player.Score > minScore)
+                {
+                    Console.WriteLine(player.Name);
+                }
+            }
         }
 
         /// <summary>
@@ -143,9 +150,16 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </returns>
         private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+            List<Player> newList = new List<Player>();
+
+            foreach (Player player in playerList)
+            {
+                if (player.Score >  minScore)
+                {
+                    newList.Add(player);
+                }
+            }
+            return newList;
         }
     }
 }
