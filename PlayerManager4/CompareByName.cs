@@ -12,6 +12,11 @@ namespace PlayerManager4
         {
             this.order = order;
         }
+        public int Compare(Player player1, Player player2)
+        {
+            int result = string.Compare(player1.Name, player2.Name);
+            return order ? result : - result;
+        }
 
     }
 }
